@@ -2,14 +2,14 @@ import React from 'react';
 
 class HornedBeasts extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             timeClicked: 0
         }
     }
 
     clicked = () => {
-        let temp = this.props.timeClicked;
+        let temp = this.state.timeClicked;
         this.setState({
             timeClicked: temp += 1
         })
@@ -18,10 +18,11 @@ class HornedBeasts extends React.Component {
 
         return (
             <div>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
                 <div>
                     <h2>{this.props.title}</h2>
-                    <p>time clicked :{this.props.timeClicked}</p>
-                    <img src={this.props.img} alt=''></img>
+                    <p>&#128151;{this.state.timeClicked}</p>
+                    <img onClick={this.clicked} src={this.props.img} alt=''></img>
                     <p>{this.props.description}</p>
                 </div>
             </div>

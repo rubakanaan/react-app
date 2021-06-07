@@ -2,12 +2,12 @@ import React from 'react';
 import HornedBeasts from './HornedBeasts';
 
 class Main extends React.Component {
-    constructor(props){
-        super(props);
-        this.state={
-        }
+    // constructor(props){
+    //     super(props);
+    //     this.state={
+    //     }
 
-    }
+    // }
     render() {
 
         return (
