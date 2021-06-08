@@ -1,4 +1,7 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card'
+
+
 
 class HornedBeasts extends React.Component {
     constructor(props) {
@@ -17,14 +20,19 @@ class HornedBeasts extends React.Component {
     render() {
 
         return (
-            <div>
-                <div>
-                    <h2>{this.props.title}</h2>
-                    <p>&#128151;{this.state.timeClicked}</p>
-                    <img onClick={this.clicked} src={this.props.img} alt=''></img>
-                    <p>{this.props.description}</p>
-                </div>
-            </div>
+ 
+                  <Card style={{ width: '18rem' }}>
+                  <Card.Body>
+                    <Card.Title>{this.props.title}</Card.Title>
+                    <Card.Text>
+                 {this.props.description}
+                    </Card.Text>
+                    <Card.Text>
+                    &#128151;{this.state.timeClicked}
+                    </Card.Text>
+                    <Card.Img onClick={this.clicked} src={this.props.img} alt=''/>
+                  </Card.Body>
+                </Card>
         )
     }
 }
