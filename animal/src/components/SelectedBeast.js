@@ -1,52 +1,36 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
-class SelectedBeast extends React.Component {
 
+export class SelectedBeast extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-
-            show: false,
-            setShow: false
-        }
     }
-
-
-    handleClose = () => {
-
-        this.setState({
-            setShow: false
-
-        })
-    }
-    handleShow = () => {
-
-        this.setState({
-            setShow: true
-
-        })
-    }
-
 
     render() {
 
         return (
             <div>
-{/* 
-                <Modal.Img onClick={this.handleShow} src={this.props.img} alt='' />
-                <Modal show={this.state.show} onHide={this.handleClose}>
-                    <Modal.Header closeButton>
+
+                <Modal show={this.props.show} onHide={this.props.handleClose} >
+
+                    {console.log('select---------------')}
+                    <Modal.Header >
                         <Modal.Title>{this.props.title}</Modal.Title>
                     </Modal.Header>
-                    <Modal.Text>{this.props.description}</Modal.Text>
+
+                    <Modal.Body>
+                        <img variant='top' src={this.props.img} alt='' style={{ width: "100%" }} />
+                        <p>{this.props.desc}</p>
+
+                    </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={this.handleClose}>
+                        <Button variant="secondary" onClick={this.props.handleClose}>
                             Close
                         </Button>
                     </Modal.Footer>
-                </Modal> */}
+                </Modal>
             </div>
         )
     }
