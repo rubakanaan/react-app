@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card'
 
 class HornedBeasts extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             timeClicked: 0
         }
@@ -18,21 +18,28 @@ class HornedBeasts extends React.Component {
         })
     }
     render() {
-
+            
         return (
- 
-                  <Card style={{ width: '18rem' }}>
-                  <Card.Body>
+
+            <Card style={{ width: '18rem' }}>
+                <Card.Body>
                     <Card.Title>{this.props.title}</Card.Title>
                     <Card.Text>
-                 {this.props.description}
+                        {this.props.description}
                     </Card.Text>
                     <Card.Text>
-                    &#128151;{this.state.timeClicked}
+                        &#128151;{this.state.timeClicked}
                     </Card.Text>
-                    <Card.Img onClick={this.clicked} src={this.props.img} alt=''/>
-                  </Card.Body>
-                </Card>
+                    <Card.Img variant='top' onClick={() => 
+                    {
+                         this.clicked(); 
+                         this.props.handleShow(this.props.title, this.props.img, this.props.description)
+                     
+                    }  }
+                        
+                          src={this.props.img} alt={this.props.title} />
+                </Card.Body>
+            </Card>
         )
     }
 }
