@@ -13,20 +13,20 @@ export class SelectedBeast extends Component {
         return (
             <div>
 
-                <Modal show={this.props.show} onHide={this.props.handleClose} >
+                <Modal show={this.props.show} >
 
-                    {console.log('select---------------')}
+                    
                     <Modal.Header >
-                        <Modal.Title>{this.props.title}</Modal.Title>
+                        <Modal.Title>{this.props.selectedProp.title}</Modal.Title>
                     </Modal.Header>
 
                     <Modal.Body>
-                        <img variant='top' src={this.props.img} alt='' style={{ width: "100%" }} />
-                        <p>{this.props.desc}</p>
+                        <img variant='top' src={this.props.selectedProp.img} alt='' style={{ width: "100%" }} />
+                        <p>{this.props.selectedProp.description}</p>
 
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={this.props.handleClose}>
+                        <Button variant="secondary" onClick={this.props.handleShow}>
                             Close
                         </Button>
                     </Modal.Footer>

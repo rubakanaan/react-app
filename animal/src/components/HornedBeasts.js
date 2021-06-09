@@ -33,7 +33,7 @@ class HornedBeasts extends React.Component {
                     <Card.Img variant='top' onClick={() => 
                     {
                          this.clicked(); 
-                         this.props.handleShow(this.props.title, this.props.img, this.props.description)
+                         this.props.handleShow(this.props)
                      
                     }  }
                         

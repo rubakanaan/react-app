@@ -1,6 +1,8 @@
 import React from 'react';
+import Filter from './Filter';
 import HornedBeasts from './HornedBeasts';
 //import Data from './Data.json';
+
 
 
 
@@ -19,10 +21,29 @@ class Main extends React.Component {
                             description={beast.description}
                             handleShow={this.props.handleShow}
                         />
+
                     )
                 })
 
                 }
+                <div>
+
+                    {
+                        
+                        this.props.arr.map((horn) => {
+                            return (
+                                    console.log(this.props.arr),
+                                <HornedBeasts
+                                    title={horn.title}
+                                    img={horn.image_url}
+                                    description={horn.description}
+
+                                />
+                            )
+                        })
+
+                    }
+                </div>
             </div>
 
         )
