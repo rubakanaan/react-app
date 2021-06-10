@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import SelectedBeast from './components/SelectedBeast'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Data from './components/Data.json';
-import Filter from './components/Filter'
+// import Filter from './components/Filter'
 
 
 
@@ -15,43 +15,26 @@ class App extends React.Component {
     this.state = {
       show: false,
       selectedProp: {},
-      hornNum: 0,
-      newArr:[]
+      
 
     }
   };
-  handleShow = (prev) => {
+  handleShow = (pre) => {
 
     this.setState({
       show: !this.state.show,
-      selectedProp: prev
+      selectedProp: pre
 
     })
   }
-  slc = (e) => {
-    console.log(e.target.value)
-    this.setState({
-      hornnum: e.target.value
-    })
-  }
- arr = () => {
+ 
 
-    this.setState({
-      newArr : Data.filter((horn) => {
-        return horn === this.slc;
-    }),
-
-    })
-  }
 
   render() {
     return (
       <div>
 
         <Header />
-        <Filter
-          Data={Data}
-          slc={this.slc} />
         <Main
           Data={Data}
           handleShow={this.handleShow}
