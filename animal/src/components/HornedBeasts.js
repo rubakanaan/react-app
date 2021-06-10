@@ -21,7 +21,8 @@ class HornedBeasts extends React.Component {
             
         return (
 
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem' }}  bg="info" text="white" border="dark"
+            >
                 <Card.Body>
                     <Card.Title>{this.props.title}</Card.Title>
                     <Card.Text>
